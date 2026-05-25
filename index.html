@@ -546,23 +546,67 @@
   #pricing > * { position: relative; z-index: 1; }
   #pricing .section-title { color: #fff; }
   #pricing .section-eyebrow { background: rgba(255,255,255,0.2); color: #fff; }
+  .pricing-grid {
+    max-width: 600px;
+    margin: 32px auto 0;
+  }
   .pricing-card {
-    max-width: 540px; margin: 0 auto;
     background: #fff; color: var(--accent);
     border-radius: 20px;
-    padding: 40px;
+    padding: 32px 28px;
     box-shadow: 0 30px 60px rgba(0,0,0,0.25);
     text-align: center;
+    display: flex; flex-direction: column;
+    position: relative;
   }
-  .pricing-card .pre-price { color: var(--muted); font-size: 14px; margin-bottom: 4px; }
-  .pricing-card .strike-big { color: var(--muted); text-decoration: line-through; font-size: 18px; }
+  .pricing-card.reserve-card {
+    background: linear-gradient(160deg, #fffbeb 0%, #fff 60%);
+    border: 2px solid #fbbf24;
+  }
+  .card-badge {
+    position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+    background: #fbbf24; color: #78350f;
+    padding: 6px 18px; border-radius: 999px;
+    font-weight: 800; font-size: 12px; letter-spacing: .04em;
+    text-transform: uppercase;
+    box-shadow: 0 4px 12px rgba(251,191,36,0.4);
+    white-space: nowrap;
+  }
+  .pricing-card .pre-price { color: var(--muted); font-size: 13px; margin-bottom: 4px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; }
+  .pricing-card .strike-big { color: var(--muted); text-decoration: line-through; font-size: 16px; }
   .pricing-card .big-price {
-    font-size: 64px; font-weight: 900;
-    color: var(--primary); letter-spacing: -0.04em;
+    font-size: 48px; font-weight: 900;
+    color: var(--primary); letter-spacing: -0.03em;
     line-height: 1; margin: 8px 0;
   }
-  .pricing-card .big-price small { font-size: 22px; color: var(--accent); font-weight: 700; }
-  .pricing-card .installments { font-size: 16px; color: var(--accent); margin-bottom: 8px; }
+  .pricing-card.reserve-card .big-price { color: #b45309; }
+  .pricing-card .big-price small { font-size: 18px; color: var(--accent); font-weight: 700; }
+  .pricing-card .installments { font-size: 15px; color: var(--accent); margin-bottom: 8px; }
+  .card-features {
+    text-align: left; margin: 16px 0; padding: 16px 0;
+    border-top: 1px dashed var(--border);
+    border-bottom: 1px dashed var(--border);
+    list-style: none;
+  }
+  .card-features li {
+    padding: 6px 0 6px 26px;
+    position: relative;
+    font-size: 14px; color: var(--accent);
+    line-height: 1.45;
+  }
+  .card-features li::before {
+    content: '✓';
+    position: absolute; left: 0; top: 6px;
+    color: #16a34a; font-weight: 900;
+  }
+  .pricing-card.reserve-card .card-features li::before { color: #b45309; }
+  .pricing-card.reserve-card .btn-primary {
+    background: #fbbf24; color: #78350f;
+  }
+  .pricing-card.reserve-card .btn-primary:hover {
+    background: #f59e0b; color: #78350f;
+    box-shadow: 0 6px 18px rgba(251,191,36,0.5);
+  }
 
   /* ---------- CROSS-LINK SECTION ---------- */
   .cross-link-section { padding: 36px 0 24px; background: var(--bg-soft); }
@@ -919,7 +963,7 @@
         <a href="#specs">Especificações</a>
         <a href="#process">Como funciona</a>
         <a href="#faq">FAQ</a>
-        <a href="#pricing" class="nav-cta">Garantir a minha</a>
+        <a href="#pricing" class="nav-cta">Reservar por R$ 2.850</a>
       </div>
     </nav>
   </div>
@@ -930,22 +974,22 @@
   <div class="container">
     <div class="hero-grid">
       <div>
-        <span class="hero-badge"><span class="dot"></span> A multi-color sem desperdício da Bambu Lab</span>
-        <h1>Bambu Lab H2C — <span>multi-color sem desperdício</span>, direto na sua porta</h1>
-        <p class="lead">A primeira impressora 3D com 7 hotends Smart-Swap: imprime até 24 filamentos diferentes na mesma peça sem o desperdício de purga do AMS tradicional. Bicos 350°C, câmara aquecida 65°C, detecção de erro por IA. A GBS pesquisa, compra e entrega — produto + frete + impostos já inclusos.</p>
+        <span class="hero-badge"><span class="dot"></span> Pré-venda Brasil · Vagas limitadas</span>
+        <h1>Garanta sua <span>Bambu Lab H2C</span> por apenas R$ 2.850</h1>
+        <p class="lead">Reserve a sua unidade hoje com R$ 2.850 e pague o saldo de R$ 25.000 (ou 10× R$ 3.050) só na entrega em SP-Capital. O sinal trava o preço da H2C mesmo se o dólar subir — 7 hotends Smart-Swap, multi-color até 24 filamentos sem purga, sem alfândega, sem grande desembolso agora.</p>
 
         <div class="hero-price-card">
           <div class="launch-tag">🌎 Importação direta · GBS 2026</div>
-          <div class="price">R$ 26.500<sup style="font-size:18px;color:var(--primary);">*</sup><small> à vista no Pix</small></div>
+          <div class="price">R$ 2.850<small> de sinal hoje</small></div>
           <a href="#pricing" class="hero-installments-teaser">
-            ou em <strong>18× de R$ 1.923,29</strong> no cartão →
+            + R$ 25.000 (ou 10× R$ 3.050) só na entrega em SP-Capital →
           </a>
-          <div class="savings">🚀 Garante o seu antes que esgote</div>
-          <div class="price-note">*Valor sujeito a variação conforme cotação do dólar no dia da compra.</div>
+          <div class="savings">🚀 Garante o seu antes que esgote — vagas contadas</div>
+          <div class="price-note">Sinal não reembolsável — vale como garantia da sua unidade.</div>
         </div>
 
         <div class="hero-cta-row">
-          <a href="#pricing" class="btn-primary">Garantir minha unidade →</a>
+          <a href="#pricing" class="btn-primary">Reservar por R$ 2.850 →</a>
           <a href="#comparison" class="btn-secondary">Ver comparativo</a>
         </div>
 
@@ -1021,22 +1065,22 @@
 
     <div class="compare-grid">
       <div class="compare-card loser">
-        <h3>🛂 Importar por conta própria</h3>
-        <div class="compare-price">≈ US$ 549<span style="font-size:18px;color:var(--muted);"> + ?</span></div>
-        <div class="compare-sub">Você compra na Bambu Lab US e cuida do resto</div>
+        <h3>🏪 Revendedor BR</h3>
+        <div class="compare-price">R$ 30.000</div>
+        <div class="compare-sub">Versão importada por revendedor brasileiro com mark-up de mercado</div>
         <ul class="compare-list">
-          <li><span class="icon icon-no">✗</span> Frete internacional por sua conta</li>
-          <li><span class="icon icon-no">✗</span> Risco de tributação na alfândega (60% + ICMS)</li>
-          <li><span class="icon icon-no">✗</span> Sem atendimento em português</li>
-          <li><span class="icon icon-no">✗</span> Sem rastreamento integrado</li>
-          <li><span class="icon icon-no">✗</span> Pagamento em cartão internacional / IOF</li>
+          <li><span class="icon icon-no">✗</span> Mark-up de 30%+ sobre o preço internacional</li>
+          <li><span class="icon icon-no">✗</span> Estoque limitado · prazo de espera longo</li>
+          <li><span class="icon icon-no">✗</span> Filamentos proprietários caros</li>
+          <li><span class="icon icon-no">✗</span> Você desembolsa tudo upfront</li>
+          <li><span class="icon icon-no">✗</span> Sem garantia de preço travado</li>
         </ul>
       </div>
 
       <div class="compare-card winner">
         <h3>🇺🇸🇧🇷 GlobalBrasilShop · H2C</h3>
-        <div class="compare-price">R$ 26.500<sup style="font-size:18px;">*</sup></div>
-        <div class="compare-sub">Bambu Lab H2C · preço final na sua porta <em style="opacity:0.7;">*sujeito à cotação do dólar do dia</em></div>
+        <div class="compare-price">R$ 27.850<sup style="font-size:18px;">*</sup></div>
+        <div class="compare-sub">R$ 2.850 de sinal + R$ 25.000 (ou 10× R$ 3.050) na entrega em SP-Capital — sem alfândega, sem surpresas <em style="opacity:0.7;">*sujeito à cotação do dólar do dia</em></div>
         <ul class="compare-list">
           <li><span class="icon icon-yes">✓</span> Impressora H2C com 7 hotends Smart-Swap</li>
           <li><span class="icon icon-yes">✓</span> Produto + frete + impostos já calculados em BRL</li>
@@ -1188,51 +1232,34 @@
       <p style="color: rgba(255,255,255,0.9);">Estoque limitado por importação. Pagamento à vista no Pix ou parcelado no cartão até 18×.</p>
     </div>
 
-    <div class="pricing-card">
-      <div class="pre-price">Bambu Lab H2C — 7 hotends · multi-color sem desperdício</div>
-      <div class="big-price">R$ 26.500<sup style="font-size:24px;color:var(--primary);">*</sup><small> à vista no Pix</small></div>
+    <div class="pricing-grid">
 
-      <div class="installments-box">
-        <div class="installments-header">ou parcele no cartão:</div>
-        <div class="installments-row">
-          <select id="installments-select" class="installments-select" aria-label="Escolha a quantidade de parcelas">
-            <option value="1"  data-monthly="27323.96" data-total="27323.96">1x de R$ 27.323,96 (sem juros)</option>
-            <option value="2"  data-monthly="14329.55" data-total="28659.10">2x de R$ 14.329,55</option>
-            <option value="3"  data-monthly="9649.89"  data-total="28949.67">3x de R$ 9.649,89</option>
-            <option value="4"  data-monthly="7397.76"  data-total="29591.02">4x de R$ 7.397,76</option>
-            <option value="5"  data-monthly="6012.74"  data-total="30063.70">5x de R$ 6.012,74</option>
-            <option value="6"  data-monthly="5090.96"  data-total="30545.76">6x de R$ 5.090,96</option>
-            <option value="7"  data-monthly="4388.76"  data-total="30721.31">7x de R$ 4.388,76</option>
-            <option value="8"  data-monthly="3891.74"  data-total="31133.94">8x de R$ 3.891,74</option>
-            <option value="9"  data-monthly="3505.25"  data-total="31547.24">9x de R$ 3.505,25</option>
-            <option value="10" data-monthly="3168.60"  data-total="31685.95">10x de R$ 3.168,60</option>
-            <option value="11" data-monthly="2924.51"  data-total="32169.60">11x de R$ 2.924,51</option>
-            <option value="12" data-monthly="2685.48"  data-total="32225.73">12x de R$ 2.685,48</option>
-            <option value="13" data-monthly="2546.26"  data-total="33101.39">13x de R$ 2.546,26</option>
-            <option value="14" data-monthly="2386.06"  data-total="33404.90">14x de R$ 2.386,06</option>
-            <option value="15" data-monthly="2247.21"  data-total="33708.20">15x de R$ 2.247,21</option>
-            <option value="16" data-monthly="2125.75"  data-total="34012.04">16x de R$ 2.125,75</option>
-            <option value="17" data-monthly="2018.56"  data-total="34315.44">17x de R$ 2.018,56</option>
-            <option value="18" data-monthly="1923.29"  data-total="34619.31" selected>18x de R$ 1.923,29</option>
-          </select>
-          <div class="installments-result">
-            <div class="installments-total-label">Total no cartão</div>
-            <div class="installments-total-value">R$ <span id="inst-total">34.619,31</span></div>
-          </div>
+      <!-- CARD ÚNICO: RESERVA -->
+      <div class="pricing-card reserve-card">
+        <span class="card-badge">🔒 Trava o preço</span>
+        <div class="pre-price">Reserva Bambu Lab H2C</div>
+        <div class="strike-big">De R$ 30.000 no revendedor BR</div>
+        <div class="big-price">R$ 2.850<small> de sinal</small></div>
+        <div class="installments">+ saldo de R$ 25.000 <strong>ou 10× R$ 3.050</strong> só na entrega em SP-Capital</div>
+        <div class="savings-big" style="background:#fef3c7;color:#78350f;">⚡ Garanta sua H2C por apenas R$ 2.850 e só pague o saldo quando ela chegar</div>
+
+        <ul class="card-features">
+          <li>Sinal de <strong>R$ 2.850</strong> hoje (Pix ou cartão)</li>
+          <li>Saldo de <strong>R$ 25.000</strong> à vista <strong>ou 10× R$ 3.050</strong>, somente na entrega em SP-Capital</li>
+          <li>Trava o preço final em <strong>R$ 27.850</strong> mesmo se o dólar subir + unidade reservada no seu nome</li>
+          <li><strong>Chegada garantida</strong> em 20–30 dias no nosso galpão em SP-Capital</li>
+          <li><strong>Sinal não reembolsável</strong> — vale como garantia da unidade</li>
+        </ul>
+
+        <a href="#" class="btn-primary" onclick="checkout('reserva'); return false;">
+          Reservar por R$ 2.850 →
+        </a>
+
+        <div class="pay-methods">
+          <strong>Você garante sua Bambu Lab H2C pagando menos e sem risco.</strong>
         </div>
       </div>
 
-      <div class="savings-big">🌎 Flagship multi-color da Bambu Lab · 7 hotends Smart-Swap</div>
-      <div class="price-note-big">*Valor sujeito a variação conforme cotação do dólar no dia da compra.</div>
-
-      <a href="#" class="btn-primary" onclick="checkout('pre-venda'); return false;">
-        Comprar agora →
-      </a>
-
-      <div class="pay-methods">
-        <strong>Formas de pagamento:</strong> Pix · Cartão até 18x · Boleto · Transferência<br>
-        <strong>Tudo incluso:</strong> produto + frete internacional + impostos + entrega no Brasil
-      </div>
     </div>
   </div>
 </section>
@@ -1308,7 +1335,7 @@
       <p class="section-sub">Estoque limitado por importação. Garante a sua antes que esgote essa rodada — o próximo lote depende da cotação do dólar.</p>
     </div>
     <div style="text-align: center;">
-      <a href="#pricing" class="btn-primary">Garantir minha H2C →</a>
+      <a href="#pricing" class="btn-primary">Reservar por R$ 2.850 →</a>
       <div style="margin-top: 24px; font-size: 14px; color: #94a3b8;">
         Dúvidas? Fale com a gente: <a href="https://wa.me/13053152155" style="color: #25D366; font-weight: 700;">WhatsApp +1 (305) 315-2155</a>
       </div>
@@ -1359,19 +1386,23 @@
 </footer>
 
 <!-- CHECKOUT MODAL -->
-<div class="modal-overlay" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+<div class="modal-overlay" id="checkoutModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" data-mode="reserva">
   <div class="modal" role="document">
     <div class="modal-header">
-      <h3 id="modalTitle">Finalizar pedido — Bambu Lab H2C</h3>
+      <h3 id="modalTitle">Reservar H2C — Sinal de R$ 2.850</h3>
       <button type="button" class="modal-close" onclick="closeCheckoutModal()" aria-label="Fechar">×</button>
     </div>
     <div class="modal-body">
       <div class="modal-summary">
         <div>
-          <div class="summary-label">Seu pedido</div>
-          <div class="summary-product">Bambu Lab H2C — 7 hotends Smart-Swap</div>
+          <div class="summary-label" id="summaryLabel">Sua reserva</div>
+          <div class="summary-product" id="summaryProduct">Reserva Bambu Lab H2C — Sinal de R$ 2.850</div>
         </div>
-        <div class="summary-price">R$ 26.500*</div>
+        <div class="summary-price" id="summaryPrice">R$ 2.850</div>
+      </div>
+      <div id="reserveNote" style="display:block; background:#fef3c7; border:1px solid #fbbf24; border-radius:10px; padding:12px 14px; margin-bottom:16px; font-size:13px; color:#78350f; line-height:1.5;">
+        <strong>🔒 Reserva — sinal de R$ 2.850</strong><br>
+        Garanta sua H2C por apenas R$ 2.850 hoje e só pague o saldo quando ela chegar. O sinal trava o preço em <strong>R$ 27.850</strong> mesmo se o dólar subir e garante sua unidade. O saldo de <strong>R$ 25.000</strong> (ou <strong>10× R$ 3.050</strong>) é pago somente na entrega em SP-Capital, após a chegada em 20–30 dias. <strong>Total à vista: R$ 27.850.</strong> Sinal não reembolsável.
       </div>
 
       <form id="checkoutForm" onsubmit="submitCheckout(event)" autocomplete="on" novalidate>
@@ -1469,14 +1500,28 @@
   }
 
   // ---------- CHECKOUT MODAL ----------
+  // Único modo ativo: reserva (R$ 2.850 sinal + saldo na entrega SP-Capital).
+  const CHECKOUT_MODES = {
+    reserva: {
+      product_id: 'h2c-reservation',
+      title: 'Reservar H2C — Sinal de R$ 2.850',
+      product_label: 'Reserva Bambu Lab H2C — Sinal de R$ 2.850',
+      summary_price: 'R$ 2.850',
+      track_value: 2850,
+      submit_text: 'Gerar link da reserva',
+      wa_subject: 'reservar a *Bambu Lab H2C* com sinal de R$ 2.850. Saldo de R$ 25.000 (ou 10× R$ 3.050) na entrega em SP-Capital (20–30 dias)',
+    }
+  };
+
   function checkout() { openCheckoutModal(); }
 
   function openCheckoutModal() {
+    const cfg = CHECKOUT_MODES.reserva;
     const m = document.getElementById('checkoutModal');
     m.classList.add('open');
     document.body.style.overflow = 'hidden';
     setTimeout(() => { const f = document.getElementById('cpf'); if (f) f.focus(); }, 200);
-    track('begin_checkout', { product: 'Bambu Lab H2C', value: 26500, currency: 'BRL' });
+    track('begin_checkout', { product: 'Bambu Lab H2C', mode: 'reserva', value: cfg.track_value, currency: 'BRL' });
   }
   function closeCheckoutModal() {
     document.getElementById('checkoutModal').classList.remove('open');
@@ -1585,15 +1630,17 @@
 
     track('qualify_lead', {
       product: 'Bambu Lab H2C',
-      value: 26500,
+      value: 2850,
       currency: 'BRL',
       city: get('cidade'),
       state: get('estado')
     });
 
+    const cfg = CHECKOUT_MODES.reserva;
+
     // Mensagem de fallback pra WhatsApp (usada se a API falhar)
     const whatsappMsg =
-`Olá! Quero comprar a *Bambu Lab H2C* por R$ 26.500*
+`Olá! Quero ${cfg.wa_subject}
 
 *👤 Dados do titular:*
 Nome: ${clientData.nome}
@@ -1601,7 +1648,7 @@ CPF/CNPJ: ${clientData.cpf}
 E-mail: ${clientData.email}
 WhatsApp: +55 ${clientData.telefone}
 
-*📍 Endereço de entrega:*
+*📍 Endereço de cobrança (entrega em SP-Capital):*
 ${clientData.endereco}, ${clientData.numero}${compl ? ' — ' + compl : ''}
 ${clientData.bairro} — ${clientData.cidade}/${clientData.estado}
 CEP: ${clientData.cep}
@@ -1617,7 +1664,7 @@ Aguardo instruções de pagamento.`;
 
     // API central GBS (compartilhada por todas as LPs)
     const PAYMENTS_API = 'https://api.globalbrasilshop.com/api/create-payment';
-    const PRODUCT_ID = 'h2c';
+    const PRODUCT_ID = cfg.product_id;
 
     try {
       const resp = await fetch(PAYMENTS_API, {
